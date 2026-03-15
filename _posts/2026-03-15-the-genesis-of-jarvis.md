@@ -6,64 +6,64 @@ tags: [ai-assistant, openclaw, personal-automation]
 summary: "How I ended up building a personal AI assistant called Jarvis, and why OpenClaw won out over the alternatives."
 ---
 
-I've spent years working with AI, but until recently, I'd never built something that felt like *mine*. Models, APIs, RAG pipelines, chatbots for clients—plenty of those. But a system that lives in my pocket, knows my calendar, reads my emails, and quietly gets on with things? That was always someone else's demo, not something I actually used.
+I heard Peter Steinberger talking about OpenClaw on the Lex Fridman podcast, and something clicked. Not in a dramatic "everything changed" way, more like a quiet "oh, this is what I've been looking for" moment. By the end of the episode I'd decided to build a personal AI assistant.
 
-Then I stumbled across OpenClaw, and things got interesting.
+I called it Jarvis, because of course I did.
 
-## The Decision
+## Why Bother?
 
-The choice wasn't obvious. Claude Desktop was right there—polished, easy, and I already had a subscription. Copilot comes baked into everything Microsoft touches. Cursor and the various AI-powered editors are impressive. Why bother with something that requires actual setup?
+The choice wasn't obvious. Claude Desktop was right there — polished, easy, already on my machine. Copilot comes baked into everything Microsoft touches. Cursor and the various AI editors are genuinely impressive. Why go to the trouble of setting up something from scratch?
 
-A few reasons converged.
+A few things nudged me toward OpenClaw.
 
-First, I wanted something that could *do* things, not just talk about them. Email triage. Calendar management. Notifications that matter. Most AI tools are brilliant conversationalists but helpless when you need them to actually touch your data.
+I wanted something that could actually *do* things, not just talk about them. Email triage, calendar management, notifications that cut through the noise rather than add to it. Most AI tools are brilliant conversationalists but frustratingly helpless when you need them to touch your actual data.
 
-Second, I wanted it on my terms. Telegram is where I live for messaging. My second brain lives in Obsidian. My calendar is Google, but spread across multiple accounts. I didn't want an AI that forced me into its ecosystem—I wanted one that adapted to mine.
+I also wanted it on my terms. Telegram is where I live for messaging. My second brain lives in Obsidian. My calendar situation is... complicated, spread across multiple Google accounts. I didn't want an AI that forced me into its ecosystem — I wanted one that would work with mine.
 
-Third, and this mattered more than I expected: I wanted to understand how it worked. Not the model internals, but the architecture. The wiring. The way pieces connect.
+And honestly, I wanted to understand how it worked. Not the model internals, I'm not that kind of engineer, but the architecture. The wiring. The way pieces actually connect.
 
-OpenClaw offered all three. It's open source, runs on my own infrastructure, and its skill system meant I could extend it to work with my tools rather than against them.
+OpenClaw is open source, runs on my own infrastructure, and has a skill system that means I can extend it rather than work around it.
 
-## The Architecture
+## The Ground Rules
 
-The vision was simple enough: a unified personal assistant that connects communication channels, knowledge management, and task automation. The execution, as always, was where things got interesting.
+Before diving in, I set some parameters for myself. Partly to keep things sane, partly because this is a side project alongside a full-time job and there are only so many hours in the week.
 
-Telegram became the primary interface—text and voice. Voice turned out to be crucial. There's something profoundly natural about talking to an assistant while walking the dog or driving, and having it respond like a competent colleague rather than a glorified search engine.
+**Learn by doing.** I wanted to understand how to build an OpenClaw agent through hands-on experience, not just copy-paste someone else's config and hope for the best.
 
-The second brain—an Obsidian vault with semantic search—gives Jarvis memory beyond the current conversation. Ideas, projects, interests, references. When I ask about something we discussed last month, it can actually find it.
+**Cost-conscious.** The default model for OpenClaw is Claude Opus 4.6 — excellent, but expensive. I wanted to find the right balance between cost and performance, using cheaper models where they make sense rather than defaulting to the premium option every time. Right now I'm running Kimi K2.5 as my default, with GLM 4.7 Flash for lighter tasks.
 
-Google Calendar integration handles the family chaos across multiple calendars. Gmail triage filters the noise and surfaces what matters. Morning briefings deliver weather, schedule, and tasks before I've finished my coffee.
+**Embrace the mess.** The development process is not going to be as robust as what I do professionally. That's fine. This is a personal project.
 
-None of this is revolutionary. Each piece is straightforward on its own. The magic is in the composition—a system that feels cohesive rather than cobbled together.
+**Fun over friction.** Where there are barriers, I'll use AI to get around them. This should be enjoyable.
 
-## The Journey
+**Share the journey.** Hence this blog. My previous attempt at a web developer blog fell silent because writing posts took too long. This time, Jarvis helps me produce content. The assistant isn't just the subject of the story — it's the tool that makes sharing the story possible.
 
-I'd love to say it all worked first time. It didn't.
+## The Architecture (Such As It Is)
 
-The LinkedIn automation skill I found looked promising until I tried to use it. Turns out the documentation assumed a direct tool access pattern that didn't actually work. I spent hours discovering that tools needed to be searched first, that session IDs were dynamic, that rate limits were enforced with an iron fist. The first attempt failed hard; I had to wait fourteen hours for the quota to reset.
+The vision was straightforward enough: a unified personal assistant connecting communication, knowledge, and tasks. The reality, as always, is messier.
+
+Telegram is the primary interface. Text works well, but voice turned out to be crucial. There's something natural about talking to an assistant while walking the dog, having it respond like a competent colleague rather than a glorified search engine.
+
+The second brain — an Obsidian vault with semantic search — gives Jarvis actual memory. Ideas, projects, interests, references. When I ask about something we discussed last month, it can find it, which is more than I can say for myself sometimes.
+
+Google Calendar integration handles family chaos across multiple calendars. Gmail triage filters the noise. Morning briefings land before I've finished my coffee with weather, schedule, and anything pressing.
+
+None of this is revolutionary. Each piece is simple on its own. The interesting part is how it composes into something that feels cohesive.
+
+## The Journey So Far
+
+I'd love to say everything worked first time.
+
+The LinkedIn automation skill I found looked promising until I actually tried to use it. The documentation assumed a tool access pattern that didn't exist. Hours of discovery followed: tools needed to be searched first, session IDs were dynamic, rate limits were enforced with an iron fist. My first attempt failed completely — I had to wait fourteen hours for the quota to reset.
 
 But here's the thing: when something didn't work, I could fix it. I rewrote the skill with the actual working pattern. Now it works every time.
 
-That's the difference between a black box and something you own. When the black box fails, you wait for an update. When your system fails, you debug, learn, and improve it.
-
-## The Voice Problem
-
-One of the earliest challenges was voice input. Dictating a complex request in a single monologue is difficult. Natural speech requires pauses for thinking, structuring ideas, deciding what to say next. But an AI assistant interprets each message as a complete instruction—mid-thought execution leads to mid-thought errors.
-
-The solution emerged through conversation: multi-message mode. A protocol that lets me send several voice messages in sequence, the assistant acknowledging each one but waiting until I signal completion before acting. Simple concept, profound impact on usability. Voice interaction went from frustrating to natural.
-
-This is the kind of problem you don't encounter until you actually use something. And the kind of solution you can implement when you control the system.
-
-## What's In a Name
-
-I called it Jarvis. Yes, after the Iron Man assistant. No, I'm not embarrassed.
-
-The name matters more than it should. When I'm asking something to read my emails and manage my calendar, "the AI assistant" feels clinical. "Jarvis" feels like a colleague. It's a small cognitive shift, but it changes how I interact with it—and how I think about what it's doing.
+That's the difference between a black box and something you own. When the black box fails, you wait for an update. When your system fails, you debug, learn, improve it.
 
 ## What's Next
 
-This is still early days. The architecture works, the core integrations are solid, but there's plenty of rough edges to sand down. More skills to build. More workflows to automate. More ways for it to anticipate what I need before I ask.
+Still early days. The architecture works, the core integrations are solid, but there are plenty of rough edges. More skills to build, more workflows to automate, more ways for it to anticipate what I need before I ask.
 
-But that's the point. I'm not waiting for someone else's roadmap. I'm building this as I go, learning what works, fixing what doesn't, and gradually arriving at something that genuinely helps.
+But that's the point. I'm not waiting for someone else's roadmap. I'm building this as I go, learning what works, fixing what doesn't.
 
-That's the genesis. Let's see where it goes.
+That's the genesis. Let's see where it leads.

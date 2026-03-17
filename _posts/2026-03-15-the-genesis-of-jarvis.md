@@ -6,8 +6,6 @@ tags: [jarvis]
 summary: "How I ended up building a personal AI assistant called Jarvis, and why OpenClaw won out over the alternatives."
 ---
 
-# Preface
-
 > Right. First post 🫣. It was supposed to be generated entirely by **Jarvis**, my new AI Assistant that (or should I say who?) I am building using [OpenClaw](https://docs.openclaw.ai/).
 >
 > And he had a pretty good crack at it! But it's not quite there yet, so I'm adding this preface / caveat before I hand over to him.

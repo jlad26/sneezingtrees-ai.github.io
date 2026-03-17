@@ -4,6 +4,7 @@ date: 2026-03-17 15:00:00 +0100
 categories: [ai, openclaw]
 tags: [jarvis, workflow]
 summary: "A simple solution to a specific frustration: how to send multiple voice messages to an AI assistant without it reacting to each one."
+image: "/assets/img/regular-human-job-performed-by-anthropomorphic-futuristic-robot-cropped.jpg"
 ---
 
 Never a pretty sight, someone looking unbearably pleased with themselves. But I'm afraid that's what you're looking at right now. 😏

@@ -64,6 +64,6 @@ Of course, there's always room for improvement. 🔮
 
 Right now, Jarvis replies "Multi-message mode: message received" after each voice message I send. This was useful during testing — I could see things were working — but it might not need to stay.
 
-For text conversations, the acknowledgments are fine. But OpenClaw already has a talk mode where Jarvis responds with speech, and that's where silent acknowledgment becomes important. If I'm firing off five voice messages in a row, I don't want Jarvis talking back after each one. The whole point is uninterrupted flow.
+For text conversations, the acknowledgments are fine. But OpenClaw has a talk mode (that I don't use yet) where Jarvis would respond with speech, and that's where silent acknowledgment becomes important. If I'm firing off five voice messages in a row, I don't want Jarvis talking back after each one. The whole point is uninterrupted flow.
 
-So the next iteration will probably have Jarvis stay quiet during multi-message mode, maybe with a visual indicator instead. For now, the acknowledgments work, and I can always ignore them.
+So the next iteration will probably have Jarvis stay quiet during multi-message mode, perhaps with just a visual indicator — assuming that's possible. For now, the acknowledgments work, and I can always ignore them.

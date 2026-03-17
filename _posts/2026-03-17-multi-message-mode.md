@@ -48,14 +48,6 @@ He's surprisingly good at it — I stammer, I repeat myself, I go off on tangent
 
 Here's what I didn't expect: I now use voice almost exclusively. Maybe 95% of my communication with Jarvis is spoken rather than typed, and when something requires physical interaction — just uploading a file, for instance — I feel actual reluctance. The friction of switching modes has become noticeable.
 
-## Future Improvements
-
-Right now, Jarvis replies "Multi-message mode: message received" after each voice message I send. This was useful during testing — I could see things were working — but it might not need to stay. 🔮
-
-For text conversations, the acknowledgments are fine. But I'm planning to add a "talk mode" where Jarvis responds with speech, and that's where silent acknowledgment becomes important. If I'm firing off five voice messages in a row, I don't want Jarvis talking back after each one. The whole point is uninterrupted flow.
-
-So the next iteration will probably have Jarvis stay quiet during multi-message mode, maybe with a visual indicator instead. For now, the acknowledgments work, and I can always ignore them.
-
 ## The Trade-off
 
 Which raises a question I've been turning over. 🤔
@@ -65,3 +57,13 @@ If I'm typing less, what happens to the skill of structuring thoughts in writing
 For now, multi-message mode stays. It's solved a real problem with zero code and a tiny prompt, and it's changed how I interact with Jarvis more than I expected.
 
 Sometimes the simple things just work. 🙂
+
+## Future Improvements
+
+Of course, there's always room for improvement. 🔮
+
+Right now, Jarvis replies "Multi-message mode: message received" after each voice message I send. This was useful during testing — I could see things were working — but it might not need to stay.
+
+For text conversations, the acknowledgments are fine. But OpenClaw already has a talk mode where Jarvis responds with speech, and that's where silent acknowledgment becomes important. If I'm firing off five voice messages in a row, I don't want Jarvis talking back after each one. The whole point is uninterrupted flow.
+
+So the next iteration will probably have Jarvis stay quiet during multi-message mode, maybe with a visual indicator instead. For now, the acknowledgments work, and I can always ignore them.

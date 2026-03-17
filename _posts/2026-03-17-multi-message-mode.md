@@ -1,8 +1,8 @@
 ---
 title: "Multi-message Mode"
 date: 2026-03-17 15:00:00 +0100
-categories: [jarvis]
-tags: [openclaw, voice, productivity, workflow]
+categories: [ai, openclaw]
+tags: [jarvis, workflow]
 summary: "A simple solution to a specific frustration: how to send multiple voice messages to an AI assistant without it reacting to each one."
 ---
 
@@ -12,9 +12,9 @@ If everything else I do on this Jarvis project turns out to be utter rubbish, mu
 
 ## The Problem
 
-The frustration built up gradually. I'd have an idea I wanted to capture—a blog post outline, a new feature—and I'd reach for my phone to send it via Telegram. Voice message, naturally. Much faster than typing. 🎤
+The frustration built up gradually. I'd have an idea I wanted to capture — a blog post outline, a new feature — and I'd reach for my phone to send it via Telegram. Voice mode, naturally. Much faster than typing. 🎤
 
-But Jarvis reacted to every message immediately. I'd record my first thought, hit send, and before I could collect the second thought, he'd be responding. The problem wasn't just the interruption—it was that I'd start trying to structure things in my head before I was ready, losing the thread entirely.
+But Jarvis reacted to every message immediately. I'd speak my first thought, release the Record button, and before I could collect the second thought, he'd be responding. The problem wasn't just the interruption — it was that I'd start trying to structure things in my head before I was ready, losing the thread entirely.
 
 What I wanted was simple: a way to send multiple voice messages and have Jarvis wait until I was done before doing anything.
 
@@ -43,9 +43,9 @@ That's it. But the impact on my workflow has been significant.
 
 I can talk through an idea now without stopping, no need to get the structure right before I start. I just say the thing, say the next thing, realise I forgot something and say that too, then let Jarvis figure out what I was getting at. 🗣️
 
-He's surprisingly good at it—I stammer, I repeat myself, I go off on tangents and circle back—but the transcription holds up (OpenAI's Whisper API, which costs pennies), and Jarvis synthesizes the jumble into something useful.
+He's surprisingly good at it — I stammer, I repeat myself, I go off on tangents and circle back — but the transcription holds up (OpenAI's gpt-4o-mini-transcribe via API, which costs peanuts - about $0.25 in the last two weeks), and Jarvis synthesizes the jumble into something useful.
 
-Here's what I didn't expect: I now use voice almost exclusively. Maybe 95% of my communication with Jarvis is spoken rather than typed, and when something requires typing—uploading a file, for instance—I feel actual reluctance. The friction of switching modes has become noticeable.
+Here's what I didn't expect: I now use voice almost exclusively. Maybe 95% of my communication with Jarvis is spoken rather than typed, and when something requires physical interaction — just uploading a file, for instance — I feel actual reluctance. The friction of switching modes has become noticeable.
 
 ## The Trade-off
 
@@ -53,6 +53,6 @@ Which raises a question I've been turning over. 🤔
 
 If I'm typing less, what happens to the skill of structuring thoughts in writing? It's a familiar concern with AI assistance generally: the tools that help us can also erode the skills they were meant to support. I don't have an answer yet. Just something I'm watching.
 
-For now, multi-message mode stays. It solved a real problem with remarkably little code, and it changed how I interact with Jarvis more than I expected.
+For now, multi-message mode stays. It's solved a real problem with zero code and a tiny prompt, and it's changed how I interact with Jarvis more than I expected.
 
 Sometimes the simple things just work. 🙂

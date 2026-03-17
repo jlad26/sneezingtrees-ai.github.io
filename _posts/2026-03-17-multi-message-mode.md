@@ -26,6 +26,8 @@ Multi-message mode. When I say "Multi-message mode," Jarvis responds "Multi-mess
 It's a handful of rules in my TOOLS.md file:
 
 ```markdown
+## Multi-message mode
+
 The goal of multi-message mode is to allow Jon to send a set of instructions using several messages (usually voice)
 one after the other without you doing anything until the end of all the messages.
 

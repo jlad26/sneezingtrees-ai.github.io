@@ -44,7 +44,8 @@ That's it. But the impact on my workflow has been significant.
 
 ## The Flow
 
-Here's a flowchart that illustrates the multi-message mode process:
+> Not really necessary this, but since I've finally trained Jarvis to produce flowcharts, I asked him to generate one for his multi-message mode. Only needed a couple of verbal tweaks from me. Not bad, especially as it was on my mid-range model `Deepseek V3.2`. A blog post to come on that, including the full skill...
+{: .prompt-info }
 
 ![Flowchart of multi-message mode](/assets/img/multi-message-mode-flowchart.png)
 

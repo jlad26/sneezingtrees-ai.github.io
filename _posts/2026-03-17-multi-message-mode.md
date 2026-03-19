@@ -42,6 +42,12 @@ Follow these instructions whenever you are asked to switch into multi-message mo
 
 That's it. But the impact on my workflow has been significant.
 
+## The Flow
+
+Here's a flowchart that illustrates the multi-message mode process:
+
+![Flowchart of multi-message mode](/assets/img/multi-message-mode-flowchart.png)
+
 ## How It Feels
 
 I can talk through an idea now without stopping, no need to get the structure right before I start. I just say the thing, say the next thing, realise I forgot something and say that too, then let Jarvis figure out what I was getting at. 🗣️

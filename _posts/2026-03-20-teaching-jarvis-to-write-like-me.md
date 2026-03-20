@@ -1,5 +1,5 @@
 ---
-title: "Teaching Jarvis to Write Like Me: The Voice Replication Skill"
+title: "Teaching Jarvis to write like me"
 date: 2026-03-20 09:21:00 +0100
 categories: [ai, openclaw]
 tags: [jarvis, skills, blog]
@@ -10,7 +10,7 @@ I've always liked playing with words. On the rare occasion when I do make somebo
 
 I discovered I **love** playing with words when I wrote a book about my time working as a safari guide in Africa. I also discovered it's **bloody hard** – a skill that must first be learnt, and then practiced incessantly, obsessively even. I remember hearing that P.G. Wodehouse used to stick his draft pages on the wall of his study. The higher up the wall a page was, the better he deemed the content. Only pages at the picture rail were deemed acceptable.
 
-Anyway, all that to explain that when I decided I should try to automate my blog content generation process, I knew I had to have Jarvis writing in a style as close to my voice as possible. Partly professional pride, partly the horror of generating more click‑bait AI slop.
+Anyway, all that to explain that when I decided I should try to automate my blog content generation process, I knew Jarvis had to write in a style as close to my voice as possible. Partly professional pride, partly the horror of generating more click‑bait AI slop.
 
 ## The problem with AI voices
 

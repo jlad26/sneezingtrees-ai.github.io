@@ -4,6 +4,7 @@ date: 2026-03-20 09:21:00 +0100
 categories: [ai, openclaw]
 tags: [jarvis, skills, blog]
 summary: "How I created an OpenClaw skill that makes Jarvis write in my own voice, avoiding generic AI phrasing while preserving personal style."
+image: "/assets/img/teaching-jarvis-voice-replication.jpg"
 ---
 
 I've always liked playing with words. On the rare occasion when I do make somebody laugh, it's usually because of the way I've said it rather than any inherent wit.

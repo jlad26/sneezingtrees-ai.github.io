@@ -16,13 +16,13 @@ Anyway, all that to say that when I decided I should try to automate my blog con
 
 Most AI‑generated content sounds, well, AI‑generated. It's often business‑like, salesy, or tries too hard to grab attention. That click‑bait tone might work for viral LinkedIn posts, but it's not how I want to communicate. I wanted Jarvis to sound like **me** – thoughtful, observant, and occasionally humorous, but never preachy or dramatic.
 
-The challenge was clear: how do you teach an AI to write in a specific human's voice without just copying phrases? And how do you avoid the generic AI phrasing that makes so much generated content feel soulless?
+The challenge was twofold: how to teach an AI to write in a specific human's voice without just copying phrases, and how to avoid the generic AI phrasing that makes so much generated content feel soulless.
 
 ## Finding the right approach
 
 My first thought was to use material from my Africa book and an old tech blog I used to write. That would give Jarvis samples of my writing across different styles – narrative, descriptive, technical, and reflective. But I needed a systematic approach, not just a pile of examples.
 
-I consulted ChatGPT to explore different voice‑replication techniques. The conversation yielded five distinct approaches, which I documented in my second brain as a reference note:
+I consulted ChatGPT to explore different voice‑replication techniques. The conversation yielded five distinct approaches:
 
 1. **Style Guide (V1)** – A simple set of writing rules
 2. **Voice Fingerprint (V2)** – Statistical analysis of writing patterns  
@@ -30,20 +30,15 @@ I consulted ChatGPT to explore different voice‑replication techniques. The con
 4. **Author Brain System** – A comprehensive knowledge base of the author's work
 5. **Simple Voice Skill** – A hybrid approach combining rules with examples
 
-The research also revealed some advanced techniques:
-- **Voice Distillation** – Extracting style rules from examples before writing
-- **Voice Stress Testing** – Preventing AI drift in longer content
-- **Stylistic Fingerprint** – Identifying the author's core writing patterns
+The research also revealed advanced techniques like **Voice Distillation** (extracting style rules before writing), **Voice Stress Testing** (preventing AI drift in longer content), and **Stylistic Fingerprint** (identifying core writing patterns).
 
-The key principles that emerged were simple but important: prioritize rhythm over vocabulary, and combine rules with examples for the best results. Voice similarity benchmarks suggested 85–95% accuracy was achievable with the right combination of techniques.
+The key principles were simple: prioritize rhythm over vocabulary, and combine rules with examples for the best results. Voice similarity benchmarks suggested 85–95% accuracy was achievable.
 
-I chose a hybrid approach – essentially the Simple Voice Skill enhanced with Distillation, Stress Testing, and Fingerprint techniques. This balanced simplicity with effectiveness, and felt like something I could actually implement.
+I chose a hybrid approach – essentially the Simple Voice Skill enhanced with Distillation, Stress Testing, and Fingerprint techniques. This balanced simplicity with effectiveness.
 
 ## Building the skill
 
-Creating the `author‑voice‑replication` skill for OpenClaw meant turning these concepts into something practical. The skill needed to guide Jarvis through my writing patterns without being overly prescriptive.
-
-The core structure identifies five writing modes I commonly use, each with example passages:
+Creating the `author‑voice‑replication` skill for OpenClaw meant turning these concepts into something practical. The skill identifies five writing modes I commonly use, each with example passages:
 
 1. **Humorous narrative** – Stories with light humour (like the baboon story from Africa)
 2. **Descriptive writing** – Vivid scene‑setting (like the thunderstorm description)  
@@ -51,7 +46,7 @@ The core structure identifies five writing modes I commonly use, each with examp
 4. **Technical explanation** – Specialised topics (from my old tech blog)
 5. **Philosophical discussion** – Reflective or opinion pieces
 
-Before writing, Jarvis reads the two most relevant examples – not to copy phrases, but to absorb the tone, structure, and rhythm. Then it follows a Voice Distillation process, extracting observable patterns from those examples before generating new text.
+Before writing, Jarvis reads the two most relevant examples – not to copy phrases, but to absorb the tone, structure, and rhythm. Then it follows a Voice Distillation process, extracting observable patterns before generating new text.
 
 Here's the complete skill markdown – the actual instructions Jarvis follows:
 
@@ -523,19 +518,19 @@ As I stood waiting for the gate to be opened, a mild dose of adrenaline eased it
 The key, apparently, was to let them do whatever they wanted. Hanging from my hair, testing my lips' stretchiness, discovering how far a little brown finger would go up a nostril – all these were to be expected, and allowed. Any resistance would lead to tantrums and trouble. I'd also emptied my pockets, taken off my belt, and done up my boot laces extra tight. The babies loved to fiddle, see, and according to them, anything that could come off should come off. In itself, not a problem, but possession is way more than nine-tenths of baboon law, and it's enforceable by instant scragging. That was the undoing of the lady who took the beating. She forgot to take her wallet out of her pocket, and then tried to take it back when the babies grabbed it. Shiny things were highly coveted, so the girls in the group had to take off all jewelry, especially earrings. The baboons were probably intelligent and dexterous enough to undo an earring, but patient they weren't, so they just ripped them out instead.
 ````
 
-Jarvis doesn't copy sentences from this. Instead, it analyzes the writing patterns: how the paragraph begins with a concrete observation, how the humour is understated, how sentences vary in length, how the reflection at the end ("Being an animal's favorite must be one of the simplest pleasures...") emerges naturally from the story.
+Jarvis doesn't copy sentences from this. Instead, it analyzes the writing patterns: how the paragraph begins with a concrete observation, how the humour is understated, how sentences vary in length, how the reflection emerges naturally from the story.
 
-The skill includes specific safeguards against generic AI phrasing. Jarvis actively avoids phrases like "In today's world", "It is important to note", or "Ultimately" – the kind of filler that weakens personal voice. There's also an "Anti‑LinkedIn Writing Filter" that catches overdramatic build‑ups, fake suspense, and motivational clichés.
+The skill includes specific safeguards – it avoids generic AI phrases like "In today's world" or "Ultimately", and includes an "Anti‑LinkedIn Writing Filter" that catches overdramatic build‑ups and motivational clichés.
 
-For longer content, the skill includes a Voice Stress Test. Every 2–3 paragraphs, Jarvis checks that the text is still grounded in concrete observations, maintains natural sentence rhythm, and follows my typical reasoning pattern: Observation → Curiosity → Explanation → Reflection.
+For longer content, a Voice Stress Test ensures the text stays grounded in concrete observations, maintains natural sentence rhythm, and follows my typical reasoning pattern: Observation → Curiosity → Explanation → Reflection.
 
 ## Results and reflections
 
-So does it work? I'd say yes, with some caveats. The writing Jarvis produces now feels closer to my voice than generic AI output. It avoids the most obvious AI clichés and maintains a more natural, conversational tone. The sentence rhythm is better – less monotonous, more varied.
+So does it work? I'd say yes, with some caveats. The writing Jarvis produces now feels closer to my voice than generic AI output. It avoids obvious AI clichés and maintains a more natural, conversational tone. The sentence rhythm is better – less monotonous, more varied.
 
-But it's not perfect. Sometimes the writing still feels slightly "off" – a little too polished, or missing the occasional rough edge that makes human writing feel authentic. The skill helps, but it doesn't completely eliminate the AI‑ness. I'd estimate it gets to that 85–90% similarity range the research suggested was achievable.
+But it's not perfect. Sometimes the writing still feels slightly "off" – a little too polished, or missing the occasional rough edge that makes human writing feel authentic. I'd estimate it gets to that 85–90% similarity range the research suggested was achievable.
 
-The bigger win is what it **prevents**: the horror of generating content that sounds like a motivational speaker or a sales page. The anti‑LinkedIn filters alone are worth the effort.
+The bigger win is what it **prevents**: content that sounds like a motivational speaker or a sales page. The anti‑LinkedIn filters alone are worth the effort.
 
 ## Why this matters
 
@@ -586,7 +581,7 @@ A classic ranger trick is to ask guests how many vertebrae a giraffe has. Seven.
 
 ## Final thoughts
 
-Creating this skill was more involved than I initially expected, but also more rewarding. It forced me to analyze my own writing patterns in a way I never had before. What makes my writing "mine"? Is it sentence length? Vocabulary choice? The way ideas develop? The answer, it turns out, is all of those things – but especially rhythm and reasoning patterns.
+Creating this skill was more involved than I initially expected, but also more rewarding. It forced me to analyze my own writing patterns in a way I never had before.
 
 The skill isn't a magic solution, but it's a significant step toward AI‑assisted writing that doesn't sacrifice personal voice. It makes Jarvis more useful while keeping the output recognizably human. And in a world filling up with generic AI content, that feels like a small but meaningful victory.
 

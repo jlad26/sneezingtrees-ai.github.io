@@ -8,7 +8,7 @@ summary: "After several weeks of daily use, I have a clear snapshot of what work
 
 Dealing with my OpenClaw agent feels somewhat like dealing with a combination of a racehorse and a classic sports car. Both are magnificent and extraordinary and a delight when they are doing what they're supposed to do, but it's sometimes extremely hard work to get them into that place where they're just right.
 
-To go along with some extraordinary successes.
+It's now six weeks since I first started playing with OpenClaw, and this blog will reveal just how much of an arm wrestler it's been at times. — Yes, some excellent successes, but quite a few disappointments and rarely easy to get those successes.
 
 ## The snapshot
 

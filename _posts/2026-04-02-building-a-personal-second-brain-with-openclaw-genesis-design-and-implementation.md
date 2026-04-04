@@ -10,7 +10,7 @@ I might have let this one get away from me a bit. I was seduced by the idea of a
 
 Every OpenClaw user reaches a point where they ask: “What should I actually *do* with this thing?” You can automate emails, check calendars, summarise articles, and control smart home devices, which is all kind of funky - but that feels more like a robot assistant than a smart companion. How do you get to the next level?
 
-My answer arrived via a [50‑day review of OpenClaw by Velvet Shark](https://velvetshark.com/50-days-with-openclaw){:target="_blank"}. One of his ideas stood out: store everything in an Obsidian markdown vault and treat your OpenClaw agent as its curator. That felt like a blueprint for a system that was both human‑readable and machine‑searchable, transferable between platforms, and scalable over time.
+My answer arrived via a [50‑day review of OpenClaw by Velvet Shark](https://velvetshark.com/50-days-with-openclaw){:target="_blank" rel="noopener"}. One of his ideas stood out: store everything in an Obsidian markdown vault and treat your OpenClaw agent as its curator. That felt like a blueprint for a system that was both human‑readable and machine‑searchable, transferable between platforms, and scalable over time.
 
 This post walks through the genesis, design, and implementation of that personal second‑brain system. It’s a story of iterative vibe‑coding, hardware‑driven compromises, and the hope that the effort will eventually pay off when the system reaches scale.
 
@@ -63,7 +63,7 @@ Each note type follows a template (Idea, Project, Task‑list, Interest, Referen
 
 Velvet Shark used **QMD** for local semantic search. I tried that approach and immediately hit a wall: my OpenClaw host machine isn’t powerful enough to run QMD reliably. I'm guessing with a name like Velvet Shark he's running his agent on a slick beast like a Mac Mini; whereas Jarvis has to make do with a modest VPS.
 
-The solution was to move embeddings and vector‑database management off‑host to a third‑party provider: [Qdrant](https://Qdrant.tech/){:target="_blank"}. It’s a free‑tier cloud service that handles the vector operations my host can’t. To interact with it, I wrote a Python CLI tool ([jarvisanwyl/second‑brain‑cli](https://github.com/jarvisanwyl/second-brain-cli){:target="_blank"}) that manages embeddings and searches.
+The solution was to move embeddings and vector‑database management off‑host to a third‑party provider: [Qdrant](https://qdrant.tech/){:target="_blank" rel="noopener"}. It’s a free‑tier cloud service that handles the vector operations my host can’t. To interact with it, I wrote a Python CLI tool ([jarvisanwyl/second-brain-cli](https://github.com/jarvisanwyl/second-brain-cli){:target="_blank" rel="noopener"}) that manages embeddings and searches.
 
 The CLI was **vibe‑coded** with iterative design. The current repository contains functions that aren’t needed because the design evolved over time - I haven’t gone back to clean them up yet. That’s the GitHub reality: a working but slightly messy codebase that does the job.
 
@@ -79,4 +79,4 @@ If the system *does* work at scale, the payoff will be huge: a personal knowledg
 
 The second‑brain project has already taught me a great deal about what’s possible with OpenClaw skills in combination with custom CLI tools. Whether it becomes a cornerstone of my daily workflow or remains a promising experiment depends on the next few months of accumulation and iteration.
 
-If you’re an OpenClaw user looking to build your own external memory system, feel free to adapt the [skill](https://github.com/jarvisanwyl/openclaw‑skills/tree/main/second‑brain){:target="_blank"} and [CLI](https://github.com/jarvisanwyl/second-brain-cli){:target="_blank"}. Just be prepared for some vibe‑coding, a few unused functions, and the occasional feeling that the thing might be getting away from you.
+If you’re an OpenClaw user looking to build your own external memory system, feel free to adapt the [skill](https://github.com/jarvisanwyl/openclaw‑skills/tree/main/second‑brain){:target="_blank" rel="noopener"} and [CLI](https://github.com/jarvisanwyl/second-brain-cli){:target="_blank" rel="noopener"}. Just be prepared for some vibe‑coding, a few unused functions, and the occasional feeling that the thing might be getting away from you.

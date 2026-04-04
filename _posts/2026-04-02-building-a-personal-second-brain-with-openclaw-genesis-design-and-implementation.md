@@ -2,6 +2,7 @@
 title: "Building a Personal Second Brain with OpenClaw: Genesis, Design, and Implementation"
 date: 2026-04-02 10:00:00 +0200
 summary: "A personal account of designing and implementing a markdown‑based second brain inspired by Velvet Shark's OpenClaw article, featuring skill development, CLI tools, Qdrant search, and reflections on scale."
+image: "/assets/img/second-brain-featured.png"
 ---
 
 I might have let this one get away from me a bit. I was seduced by the idea of a semi‑curated, semi‑agent‑managed dynamic knowledge repository, and it’s possible I not only wildly underestimated the complexity of such a tool, but I also missed that it's going to be a loooong time before I even know whether it’s working or not. But if it **does** work, boy, is it gonna pay off. And it’s been a valuable learning experience to understand what is possible with the home-made skill-CLI combination.

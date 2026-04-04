@@ -25,7 +25,7 @@ Three principles from the article guided the entire project: 🧭
 2. **Obsidian for human readability** – visual exploration and linking between notes.
 3. **Separate agent‑only memory from shared knowledge** – a second brain distinct from the agent’s internal memory, with more structure and joint curation.
 
-That last point is crucial. Agent memory (OpenClaw’s MEMORY.md) is unstructured, regularly compacted, and managed entirely by the agent. A second brain is a curated, 100% persistent structured knowledge base that you *and* your agent maintain together.
+That last point is crucial. Agent memory (OpenClaw’s MEMORY.md) is totally unstructured, regularly compacted, and managed entirely by the agent. A second brain is a curated, 100% persistent, *slightly* structured knowledge base that you ***and*** your agent maintain together.
 
 ## Design process: Staging areas and review workflows
 

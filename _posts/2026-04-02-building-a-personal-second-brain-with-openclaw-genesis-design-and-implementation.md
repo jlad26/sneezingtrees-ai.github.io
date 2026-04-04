@@ -1,6 +1,8 @@
 ---
 title: "Building a Personal Second Brain with OpenClaw: Genesis, Design, and Implementation"
 date: 2026-04-02 10:00:00 +0200
+categories: [ai, openclaw]
+tags: [jarvis, skills]
 summary: "A personal account of designing and implementing a markdown‑based second brain inspired by Velvet Shark's OpenClaw article, featuring skill development, CLI tools, Qdrant search, and reflections on scale."
 image: "/assets/img/second-brain-featured.png"
 ---

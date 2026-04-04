@@ -1,8 +1,8 @@
 ---
 title: "My OpenClaw AI Assistant: Racehorse, Sports Car, and a Few Stumbles"
 date: 2026-04-01 16:30:00 +0200
-categories: [ai, personal-automation]
-tags: [openclaw, ai-assistant, lessons-learned]
+categories: [ai, openclaw]
+tags: [jarvis, lessons-learned]
 summary: "After several weeks of daily use, I have a clear snapshot of what works, what doesn't, and where my AI assistant still struggles—from model selection and cost realities to workflow adaptations and a suite of developed skills."
 ---
 

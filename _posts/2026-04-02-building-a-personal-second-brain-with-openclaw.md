@@ -80,7 +80,7 @@ The biggest challenge is **scale**. I don’t yet have enough material in the va
 
 If the system *does* work at scale, the payoff will be huge: a personal knowledge base that grows smarter over time, is completely under my control, and can be queried conversationally via my OpenClaw agent. ✅
 
-The next step might be to automate nightly research—having Jarvis scour the web for interesting topics and automatically propose new ideas or projects without waiting for my prompt. That would accelerate the vault’s growth dramatically. The catch, of course, is that I’d need to decide what he should be looking for… and I’m not entirely sure what my interests actually are. (Maybe the second brain can figure that out for me.) 🔍
+The next step might be to automate nightly research - having Jarvis scour the web for interesting topics and automatically propose new ideas or projects without waiting for my prompt. That would accelerate the vault’s growth dramatically. The catch, of course, is that I’d need to decide what he should be looking for… and I’m not entirely sure what my interests actually are. (Maybe the second brain can figure that out for me.) 🔍
 
 Whatever happens, this project has already taught me a great deal about what’s possible with OpenClaw skills in combination with custom CLI tools. Whether it becomes a cornerstone of my daily workflow or remains a promising experiment depends on the next few months of accumulation and iteration.
 

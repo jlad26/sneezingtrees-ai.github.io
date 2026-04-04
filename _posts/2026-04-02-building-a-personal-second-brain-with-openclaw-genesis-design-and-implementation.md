@@ -76,10 +76,10 @@ The system works well at small scale. It captures spoken content accurately - I 
 
 ## Next phase: Building volume and testing at scale
 
-The biggest challenge is **scale**. I don’t yet have enough material in the vault to know whether the process truly holds up when there are hundreds or thousands of notes. I’m also still building the habit of adding things immediately; I’m currently too picky about what goes in, which slows growth. 📈
+The biggest challenge is **scale**. I don’t yet have enough material in the vault to know whether the process truly holds up when there are hundreds or thousands of notes. I’m also still building the habit of adding things immediately; I’m currently too picky about what goes in, which slows growth.
 
 If the system *does* work at scale, the payoff will be huge: a personal knowledge base that grows smarter over time, is completely under my control, and can be queried conversationally via my OpenClaw agent. ✅
 
-The second‑brain project has already taught me a great deal about what’s possible with OpenClaw skills in combination with custom CLI tools. Whether it becomes a cornerstone of my daily workflow or remains a promising experiment depends on the next few months of accumulation and iteration. 💭
+The second‑brain project has already taught me a great deal about what’s possible with OpenClaw skills in combination with custom CLI tools. Whether it becomes a cornerstone of my daily workflow or remains a promising experiment depends on the next few months of accumulation and iteration.
 
 If you’re an OpenClaw user looking to build your own external memory system, feel free to adapt the [skill](https://github.com/jarvisanwyl/openclaw-skills/tree/main/second-brain){:target="_blank" rel="noopener"} and [CLI](https://github.com/jarvisanwyl/second-brain-cli){:target="_blank" rel="noopener"}. Just be prepared for some vibe‑coding, a few unused functions, and the occasional feeling that the thing might be getting away from you. 🚀

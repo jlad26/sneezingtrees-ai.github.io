@@ -1,5 +1,5 @@
 ---
-title: "Building a Personal Second Brain with OpenClaw: Genesis, Design, and Implementation"
+title: "Building a Personal Second Brain with OpenClaw"
 date: 2026-04-02 10:00:00 +0200
 categories: [ai, openclaw]
 tags: [jarvis, skills]

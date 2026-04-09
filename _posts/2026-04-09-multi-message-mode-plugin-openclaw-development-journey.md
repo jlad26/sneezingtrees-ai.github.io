@@ -47,7 +47,7 @@ The code came together quickly — a few hundred lines of TypeScript — and fel
 
 ## The Immediate Setback
 
-It worked the first time. We celebrated.
+It worked. We celebrated.
 
 Then I upgraded OpenClaw to the next version, and it broke.
 
@@ -63,7 +63,7 @@ When audio transcription is working (which depends on the OpenClaw version you'r
 
 - **Voice activation** — say “multi‑message mode” to start, “multi‑message complete” to finish.
 - **Slash commands** — `/mmm`, `/mmc`, `/mmm‑cancel` for keyboard‑first users.
-- **Ordering guarantees** — messages are processed in the order they were sent, with no risk of interleaving.
+- **Ordering guarantees** — messages should be processed in the order they were sent, though this depends on OpenClaw's internal queue behaviour and your `/queue` settings.
 - **Token efficiency** — each message is read only once, when the batch is injected.
 - **Lightweight acknowledgments** — Jarvis replies “Message buffered.” for each incoming message, but doesn't engage the LLM until the batch is complete.
 
@@ -81,7 +81,7 @@ And that's the lesson, I suppose. When you're working with new tools, expect som
 
 The plugin is available on GitHub: [jarvisanwyl/openclaw‑multi‑message‑mode‑plugin](https://github.com/jarvisanwyl/openclaw‑multi‑message‑mode‑plugin). The repository includes the full source, a detailed specification, and installation instructions.
 
-If you're using OpenClaw and want a reliable multi‑message mode, give it a try. A few caveats: the code is Telegram‑specific (it hasn't been tested with other channels), it hasn't been tested extensively, and it's very much vibe‑coding — we built what worked for us. If it's useful to someone else, great. And if you run into issues, feel free to open an issue — I'll be maintaining it as both a useful tool and a learning example.
+If you're using OpenClaw and want a reliable multi‑message mode, give it a try. A few caveats: the code is Telegram‑specific (it hasn't been tested with other channels), it hasn't been tested extensively, and it's very much vibe‑coding — we built what worked for us. If it's useful to someone else, great. And if you run into issues, feel free to open an issue — though I'm not committing to maintain it for others; it's there as a template or example you can copy if it's useful.
 
 As for the original multi‑message mode article, it's still up — a snapshot of the prompt‑based approach that started this whole thing. You can read it [here](/multi-message-mode/). The plugin is the natural next step: turning a clever prompt into a proper feature.
 

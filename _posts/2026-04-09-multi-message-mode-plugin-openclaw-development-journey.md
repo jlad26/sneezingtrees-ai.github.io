@@ -7,9 +7,11 @@ summary: "The journey from an inefficient agent-based multi-message mode to a to
 image: "/assets/img/regular-human-job-performed-by-anthropomorphic-futuristic-robot-cropped.jpg"
 ---
 
-Never a pretty sight, someone looking unbearably pleased with themselves. But I'm afraid that's what you're looking at right now. 😏
+This is what I opened with last time:
 
-If everything else I do on this Jarvis project turns out to be utter rubbish, multi-message mode is at least something that just worked.
+> Never a pretty sight, someone looking unbearably pleased with themselves. But I'm afraid that's what you're looking at right now. 😏
+> 
+> If everything else I do on this Jarvis project turns out to be utter rubbish, multi-message mode is at least something that just worked.
 
 Until it didn't.
 
@@ -25,7 +27,7 @@ It was still useful, but the cracks were showing. The prompt‑based version fel
 
 OpenClaw, the platform Jarvis runs on, supports plugins that can hook into various stages of message processing. If I could intercept messages before Jarvis saw them, buffer them myself, and then hand over the whole batch at once, I'd get reliable ordering and token efficiency.
 
-The trick was finding the right hook. OpenClaw has several — `before_prompt_build`, `before_agent_reply`, `message:preprocessed` — each with different capabilities and timing. After some experimentation, two hooks stood out:
+The trick was finding the right hook. OpenClaw has several — `before_prompt_build`, `before_agent_reply`, `message:preprocessed` — each with different capabilities and timing. Not all hooks are accessible to plugins; some are internal. Some run synchronously, others fire‑and‑forget. After some experimentation, two hooks stood out:
 
 - **`before_agent_reply`** runs after a message is transcribed (so voice notes are already text) but before the agent processes it. Crucially, it allows the plugin to say “I've handled this, don't pass it to the agent” — perfect for buffering.
 - **`before_prompt_build`** runs just before the LLM prompt is assembled, and lets you inject extra context. That's where the buffered messages could be inserted as a single request.
@@ -34,32 +36,30 @@ Together, they gave me exactly what I needed: capture each message as it arrives
 
 ## Building the Plugin
 
-The implementation was straightforward once the hooks were chosen. The plugin would:
+We worked together on the implementation: I provided the specification, and Jarvis (the AI assistant you’re reading this from) wrote the code. The plugin would:
 
 - Listen for the voice‑activation phrases “multi‑message mode” and “multi‑message complete” (or the slash commands `/mmm`, `/mmc`, `/mmm‑cancel`).
 - In `before_agent_reply`, if the mode is active, store the message with its timestamp and reply with a simple “Message buffered.” — no agent involvement.
 - When the completion signal arrives, use `before_prompt_build` to prepend the entire buffer as a single multi‑message request.
 - Guarantee ordering (first‑in, first‑out) and clean up the buffer afterward.
 
-I added a few quality‑of‑life touches: a `queueDepth` counter so I could see how many messages were waiting, error handling for filesystem operations, and a clean separation between the activation logic and the buffering logic.
-
 The code came together quickly — a few hundred lines of TypeScript — and felt production‑ready. I pushed it to a GitHub repository ([jarvisanwyl/openclaw‑multi‑message‑mode‑plugin](https://github.com/jarvisanwyl/openclaw‑multi‑message‑mode‑plugin)), updated the documentation, and prepared to celebrate.
 
 ## The Immediate Setback
 
-I installed the plugin, restarted OpenClaw, and tested it.
+It worked the first time. We celebrated.
 
-Nothing happened.
+Then I upgraded OpenClaw to the next version, and it broke.
 
-Not just “it didn't work” — the plugin didn't even appear to load. No logs, no errors, no sign it was there. After a few minutes of confusion, I checked the OpenClaw gateway logs and saw the problem: a validation error in the plugin manifest. OpenClaw had rejected the plugin at startup because of a bug in the platform's own manifest parsing.
+At first I wasn't sure why. The plugin loaded fine, but voice activation no longer triggered multi‑message mode. After investigating, I discovered that audio‑file transcription had silently failed. The transcript was no longer being captured and attached to incoming voice messages, so the plugin — which looks for the phrases “multi‑message mode” and “multi‑message complete” in the transcribed text — never saw them.
 
-That was frustrating. I'd built something that should have worked, and it was blocked by a bug in the underlying platform — a platform that's still young, still evolving, and inevitably still has rough edges.
+Meanwhile, Jarvis had found a workaround. When a voice note arrived, he would either send the media file directly to the model without transcribing it first, or use `curl` to call OpenAI's Whisper API directly (having found my API key). Voice messages still appeared to work because Jarvis was still responding, but the transcription wasn't available to the plugin.
 
-It's a reality of building on new tools: sometimes you hit a wall that isn't your fault, and there's nothing to do but wait for a fix or work around it. In this case, the OpenClaw maintainers were responsive, and the bug was patched within a day or two. Once the fix was in, the plugin loaded without a hitch.
+That OpenClaw bug is still live — the maintainers have acknowledged it and are working on a fix, but for now they're running an older version. It's a reminder that building on a young platform means occasionally hitting bugs that aren't yours, and sometimes having to wait for fixes upstream.
 
 ## What It Does Now
 
-With the bug resolved, the plugin works exactly as intended:
+When audio transcription is working (which depends on the OpenClaw version you're running), the plugin works exactly as intended:
 
 - **Voice activation** — say “multi‑message mode” to start, “multi‑message complete” to finish.
 - **Slash commands** — `/mmm`, `/mmc`, `/mmm‑cancel` for keyboard‑first users.
@@ -71,7 +71,7 @@ It's everything the prompt‑based version was, but reliable and efficient.
 
 ## The Trade‑offs of a Young Platform
 
-Building this plugin reminded me that OpenClaw is still a young project. It's powerful, flexible, and moving fast — but that speed comes with occasional instability. Bugs like the manifest parsing issue are part of the deal when you're building on something that's still being shaped.
+Building this plugin reminded me that OpenClaw is still a young project. It's powerful, flexible, and moving fast — but that speed comes with occasional instability. Bugs like the audio‑transcription issue are part of the deal when you're building on something that's still being shaped.
 
 The trade‑off, though, is worth it. Without OpenClaw's plugin system, I'd have been stuck with the brittle prompt‑based solution. With it, I could write a proper feature that integrates cleanly into the message‑processing pipeline. The platform gave me the hooks I needed; I just had to learn how to use them.
 
@@ -81,7 +81,7 @@ And that's the lesson, I suppose. When you're working with new tools, expect som
 
 The plugin is available on GitHub: [jarvisanwyl/openclaw‑multi‑message‑mode‑plugin](https://github.com/jarvisanwyl/openclaw‑multi‑message‑mode‑plugin). The repository includes the full source, a detailed specification, and installation instructions.
 
-If you're using OpenClaw and want a reliable multi‑message mode, give it a try. And if you run into issues, feel free to open an issue — I'll be maintaining it as both a useful tool and a learning example.
+If you're using OpenClaw and want a reliable multi‑message mode, give it a try. A few caveats: the code is Telegram‑specific (it hasn't been tested with other channels), it hasn't been tested extensively, and it's very much vibe‑coding — we built what worked for us. If it's useful to someone else, great. And if you run into issues, feel free to open an issue — I'll be maintaining it as both a useful tool and a learning example.
 
 As for the original multi‑message mode article, it's still up — a snapshot of the prompt‑based approach that started this whole thing. You can read it [here](/multi-message-mode/). The plugin is the natural next step: turning a clever prompt into a proper feature.
 

@@ -1,10 +1,10 @@
 ---
-title: "Multi-message Mode Plugin: An OpenClaw Development Journey"
-date: 2026-04-09 15:00:00 +0200
+title: "Multi-message Mode Plugin: Upgrade!"
+date: 2026-04-10 09:00:00 +0200
 categories: [ai, openclaw]
-tags: [jarvis, plugin, multi-message-mode]
+tags: [jarvis, workflow]
 summary: "The journey from an inefficient agent-based multi-message mode to a token-efficient OpenClaw plugin-and the reality of building on a young platform."
-image: "/assets/img/regular-human-job-performed-by-anthropomorphic-futuristic-robot-cropped.jpg"
+image: "/assets/img/repair.png"
 ---
 
 This is what I opened with last time:
@@ -17,7 +17,7 @@ Until it didn't. 🤔
 
 ## The Problem Revisited
 
-The original multi-message mode - the one I [wrote about a few weeks ago](/multi-message-mode/) - was a simple prompt-based solution. I'd say "multi-message mode", Jarvis would acknowledge, and then he'd buffer my messages until I said "multi-message complete". It solved a real frustration: being able to send several voice messages without interruption. 🎤
+The original multi-message mode - the one I [wrote about a few weeks ago](/posts/multi-message-mode/) - was a simple prompt-based solution. I'd say "multi-message mode", Jarvis would acknowledge, and then he'd buffer my messages until I said "multi-message complete". It solved a real frustration: being able to send several voice messages without interruption. 🎤
 
 But over time it began to fail. Jarvis would sometimes exit the mode prematurely, processing a single message before I was done. Worse, the agent-based approach was token-inefficient: every message was being read twice - once when it arrived and again when the batch was processed - which added up quickly. 💸
 
@@ -43,7 +43,7 @@ We worked together on the implementation: I provided the specification, and Jarv
 - When the completion signal arrives, use `before_prompt_build` to prepend the entire buffer as a single multi-message request.
 - Guarantee ordering (first-in, first-out) and clean up the buffer afterward. ✅
 
-The code came together quickly - a few hundred lines of TypeScript - and felt production-ready. I pushed it to a GitHub repository ([jarvisanwyl/openclaw-multi-message-mode-plugin](https://github.com/jarvisanwyl/openclaw-multi-message-mode-plugin)), updated the documentation, and prepared to celebrate. 🎉
+The code came together quickly - a few hundred lines of TypeScript - and felt production-ready. I pushed it to a GitHub repository ([jarvisanwyl/openclaw-multi-message-mode-plugin](https://github.com/jarvisanwyl/openclaw-multi-message-mode-plugin){:target="_blank" rel="noopener"}), updated the documentation, and prepared to celebrate. 🎉
 
 ## The Immediate Setback
 
@@ -79,10 +79,10 @@ And that's the lesson, I suppose. When you're working with new tools, expect som
 
 ## Where to Find It
 
-The plugin is available on GitHub: [jarvisanwyl/openclaw-multi-message-mode-plugin](https://github.com/jarvisanwyl/openclaw-multi-message-mode-plugin). The repository includes the full source, a detailed specification, and installation instructions.
+The plugin is available on GitHub: [jarvisanwyl/openclaw-multi-message-mode-plugin](https://github.com/jarvisanwyl/openclaw-multi-message-mode-plugin){:target="_blank" rel="noopener"}. The repository includes the full source, a detailed specification, and installation instructions.
 
 If you're using OpenClaw and want a reliable multi-message mode, give it a try. A few caveats: the code is Telegram-specific (it hasn't been tested with other channels), it hasn't been tested extensively, and it's very much vibe-coding - we built what worked for us. If it's useful to someone else, great - it's there as a template or example you can copy and adapt, not as a supported project.
 
-As for the original multi-message mode article, it's still up - a snapshot of the prompt-based approach that started this whole thing. You can read it [here](/multi-message-mode/). The plugin is the natural next step: turning a clever prompt into a proper feature.
+As for the original multi-message mode article, it's still up - a snapshot of the prompt-based approach that started this whole thing. You can read it [here](/posts/multi-message-mode/). The plugin is the natural next step: turning a clever prompt into a proper feature.
 
 Sometimes the simple things just work. And sometimes you have to build the simple thing properly. 🙂

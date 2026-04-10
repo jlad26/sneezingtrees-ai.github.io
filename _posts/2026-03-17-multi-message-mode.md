@@ -7,6 +7,10 @@ summary: "A simple solution to a specific frustration: how to send multiple voic
 image: "/assets/img/regular-human-job-performed-by-anthropomorphic-futuristic-robot-cropped.jpg"
 ---
 
+> UPDATE! Turns out Version 1 of multi-mode was... less than perfect. Check out **why** and the fabulous **Version 2**
+> in the post [Multi-message Mode Plugin: Upgrade!](/posts/multi-message-mode-upgrade/)
+{: .prompt-info}
+
 Never a pretty sight, someone looking unbearably pleased with themselves. But I'm afraid that's what you're looking at right now. 😏
 
 If everything else I do on this Jarvis project turns out to be utter rubbish, multi-message mode is at least something that just worked.

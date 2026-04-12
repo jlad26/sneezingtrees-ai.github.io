@@ -4,9 +4,10 @@ date: 2026-04-12 10:30:00 +0200
 categories: [ai, openclaw]
 tags: [jarvis, lessons-learned]
 summary: "After several weeks of daily use, I have a clear snapshot of what works, what doesn't, and where my AI assistant still struggles-from model selection and cost realities to workflow adaptations and a suite of developed skills."
+image: "/assets/img/evaluation.jpg"
 ---
 
-Dealing with my OpenClaw agent feels somewhat like owning a combination of racehorse and classic sports car. Both are magnificent and extraordinary, and a delight when they are doing what they're supposed to, but it's sometimes tricky to cajole and wrestle them into that place where they're just right. 🏎️🐎
+Dealing with my OpenClaw agent feels somewhat like owning a combination of racehorse 🐎 and classic sports car 🏎️. Both are magnificent and extraordinary, and a delight when they are doing what they're supposed to, but it's sometimes tricky to cajole and wrestle them into that place where they're just right.
 
 ## The snapshot
 
@@ -29,7 +30,7 @@ There's also a **model cost‑efficiency trade‑off**: using a more expensive m
 ### 3. Workflow adaptations
 - **Telegram topics as parallel channels** - because AI responses can be slow, I run multiple conversations in separate topics. This turns latency into parallel throughput, but…
 - **Multitasking overhead** - keeping track of 3-4 topic threads is cognitively demanding. I sometimes lose the thread of what I'm doing, and the constant context‑switching reduces focus. I'm getting better, but I have to say it hasn't come naturally. No doubt the fact I have grey hairs has something to do with that.
-- **Control vs. autonomy** - I maintain close oversight of configuration changes to retain understanding and control. That slows progress, but may prevent future mess. I'm still unsure whether this cautious, monitored approach is better than granting full autonomy and unleashing the beast. 🧠
+- **Control vs. autonomy** - I maintain close oversight of configuration changes to retain understanding and control. That slows progress, but may prevent future mess. I'm still unsure whether this cautious, monitored approach is better than granting full autonomy and unleashing the beast.
 
 ### 4. Pattern: text works, visuals struggle
 The assistant is most successful with **purely text‑related tasks** - summarising, drafting, coding, researching, replicating my voice. Those are its sweet spot.
@@ -61,6 +62,6 @@ Tasks that involve **layout, graphics, or visual UI interaction** are less relia
 OpenClaw is still a relatively new tool. We encounter **timeouts, tool‑limit failures, and occasional unclear errors**. The agent is generally good at self‑diagnosing, but sometimes the root cause is opaque, leading to lost time debugging. 🛠️
 
 ## The takeaway
-This isn't a review - it's a snapshot. The racehorse/sports‑car metaphor holds: when everything clicks, the experience is extraordinary. When it doesn't, it's fiddly, expensive, and demands patience. 🏇
+This isn't a review - it's a snapshot. The racehorse/sports‑car metaphor holds: when everything clicks, the experience is extraordinary. When it doesn't, it's fiddly, expensive, and demands patience. ⏲️
 
 I'm still figuring out the right balance of control, model selection, and which tasks to automate. But after a few weeks, I have a much clearer map of the terrain - and a suite of skills that already save me time, even if they don't yet deliver the fully hands‑off future I sometimes imagine. I thought the future had arrived. Not quite today, but tomorrow looks hopeful... 🔮
